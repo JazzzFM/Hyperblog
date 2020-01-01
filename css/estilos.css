@@ -1,6 +1,42 @@
-body
-{	color: deeppink;
-	text-align: center;
-	font-family: "Arial";
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+nav{
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 04px8px0rgba(0, 0, 0, 0.2), 06px20px0rgba(0, 0, 0, 0.19);
+}
+
+main{
+    margin: 010%;
+}
+
+.container{
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    box-shadow: 04px8px0rgba(0, 0, 0, 0.2), 06px20px0rgba(0, 0, 0, 0.19);
+
+}
+
+.article-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.article-headerspan{
+    color: #474747;
+    margin-bottom: 20px;
+}
+
+a{
+    text-decoration: none;
 }
