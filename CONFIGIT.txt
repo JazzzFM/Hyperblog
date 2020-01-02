@@ -1,0 +1,72 @@
+Configuración inicial de GIT
+Para ver todas las configuraciones disponibles de forma predeterminada:
+git config --list
+
+Para ver en que archivo físico se almacenan estos datos:
+git config --list --show-origin
+
+Proveemos información sobre nosotros configurando el nombre de usuario y correo electrónico:
+git config --global user.name "Juan Rodríguez" git config --global user.email "jrodriguez@email.com"
+
+Analizar cambios en archivos
+Ver los cambios que ha sufrido un archivo:
+git show historia.txt
+
+Ver diferencias entre dos commits:
+git diff {commit1} {commit2}
+
+Volver en el tiempo en nuestro repositorio
+Volver a una versión anterior:
+
+git reset --soft : Borra todo el historial y los registros de Git conservando los cambios que tengamos en Staging.
+git reset --hard : Borra absolutamente toda la información de los commits y del Staging.
+git reset HEAD : Este es el comando sirve para sacar archivos del área de Staging.
+
+Ver la última versión del archivo (master):
+git checkout master historia.txt
+
+Descargar cambios y fusionarlos con el repositorio local:
+git pullequivale agit fetch + git merge
+
+Para agregar un archivo existente y confirmarlo (git add + git commit):
+git commit -am "Un mensaje"
+
+Lista las ramas existentes, resaltando en la que se está trabajando:
+git branch
+
+
+	git init: Crear la carpeta .git en la que está la base de datos del repositorio local.
+
+git add: Agregar los cambios al área de preparación o staging. con el argumento –A o con punto agregamos todos los archivos con cambios. Si se especifíca un nombre de archivo se agrega solamente ese archivo.
+
+git commit: Guardar todos los cambios del área de preparación. Con el argumento ¬–m agregamos un mensaje sin entrar al editor vim que viene por defecto. Con el argumento –am¬ le decimos que agregue todos los cambios de área de staging y que haga commit inmediatamente.
+
+git log: Ver la lista de los commits realizados en el repositorio. Se puede agregar el argumento –-stat para ver la cantidad de cosas que se han agregado o quitado en cada commit. también se puede especificar un nombre de archivo para ver solo los commits donde dicho archivo aparezca.
+
+git show: Ver las diferencias entre los dos últimos commits. Se muestran en rojo las líneas borradas, en verde las agregadas y en blanco las que se mantienen. Se puede especificar un nombre de archivo para ver solo los cambios en dicho archivo.
+
+git diff: Comparar dos commit usando sus hash (código largo generado al hacer commit). Lo ideal es escribir primero el hash del commit más viejo para que salga en rojo. Con este comando podemos ver la diferencia entre el último commit y lo que tenemos en el área de staging.
+
+git status: Ver en qué estado se encuentran los archivos del repositorio, es decir, si están dentro o fuera del área de staging.
+
+git reset head: Sacar nuestros archivos de área de staging.
+
+git rm: Eliminar archivos. Con el argumento –-force se eliminan los archivos definitivamente, mientras que con el comando –-cached se elimina el archivo del próximo commit pero se mantiene en el disco duro como un archivo untraked.
+
+git branch: Ver las ramas que existen. También podemos crear ramas agregando un nombre para la rama al lado del comando.
+
+git checkout: Viajar entre ramas o entre commits. Para volver a un estado anterior del repositorio agregamos el hash del commit (o si queremos ir a master solo agregamos la palabra master). Si solo queremos ver el estado de un archivo en un commit anterior ponemos el hash y el nombre del archivo. Para crear una rama y acceder inmediatamente a ella usamos git checkout –b nombre_rama, para borrar una rama cambiamos la b por una d y para renombrar una rama cambiamos la b por una m. también podemos cambiar de rama indicando al lado del comando el nombre de da rama.
+
+git config: Todo lo relacionado a la configuración. Con el argumento –l podemos ver la lista de las configuraciones. Con el argumento --global user.email correo configuramos el correo de nuestra cuenta de github y con --global user.name nombre_usuario el nombre de la persona.
+
+git reset: Nos devuelve a un commit anterior borrando todo lo que hicimos después de ese commit. La diferencia radica en que si usamos el argumento --soft se conservará lo que tengamos en el staging, mientras que si usamos el argumento --hard¬ se borrará también lo que esté en el staging. Este comando es peligroso.
+
+git clone: Nos crea una copia de un repositorio de GitHub. Debemos indicar al lado del comando la URL del repositorio.
+
+git fetch: Trae confirmaciones y archivos de un repositorio remoto a nuestro repositorio local sin alterar nuestros archivos, de tal manera que podemos revisar lo que queremos fusionar con nuestros archivos.
+
+git merge: Fusionar ramas y dar el resultado en un nuevo commit. Para esto, desde la rama principal indicamos al lado del comando el nombre de la rama con la que vamos a fusionar.
+
+git push: Enviar el contenido de nuestro repositorio local al repositorio remoto.
+
+git pull: Hacer git fetch y git merge al mismo tiempo.	
