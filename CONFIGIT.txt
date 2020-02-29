@@ -34,8 +34,7 @@ git commit -am "Un mensaje"
 Lista las ramas existentes, resaltando en la que se está trabajando:
 git branch
 
-
-	git init: Crear la carpeta .git en la que está la base de datos del repositorio local.
+git init: Crear la carpeta .git en la que está la base de datos del repositorio local.
 
 git add: Agregar los cambios al área de preparación o staging. con el argumento –A o con punto agregamos todos los archivos con cambios. Si se especifíca un nombre de archivo se agrega solamente ese archivo.
 
